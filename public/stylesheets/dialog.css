@@ -1,0 +1,139 @@
+body {
+	font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
+	color: #000;
+	background-color: #d4d4d4;
+	margin: 0;
+	padding: 0;
+	font-size: 0.8em;
+	min-width: 900px;
+}
+a:link, a:visited {
+	color: #0054ff;
+}
+a:hover {
+	background-color: #0054ff;
+	color: #fff;
+}
+fieldset {
+	border: none;
+	border-top: 1px solid #999;
+}
+fieldset legend {
+	font-size: 140%;
+	margin: 0 10px 0 15px;
+	padding: 0 5px;
+}
+fieldset div.js_option {
+	text-align: right;
+	font-size: 87%;
+}
+input[type="text"], input[type="password"] {
+	font-size: 1.4em;
+	width: 92%;
+	margin: 0.4em;
+}
+input[type="submit"] {
+	font-size:  1.4em;
+}
+label {
+	font-size: 1.4em;
+}
+#submitbutton {
+	margin: 0.8em;
+	text-align: right;
+}
+/** Main body */
+#main {
+	margin: 7em auto 0 auto;
+}
+#left {
+	background-color: #fff;
+	margin: 0 auto;
+	width: 36em;
+	border: 8px solid #ccc;
+}
+#left .head {
+	color: #204ca0;
+	font-weight: normal;
+	background-color: #d3dbff;
+	padding: 0.7em 1em;
+	margin: 0;
+	font-size: 1.8em;
+	text-align: center;
+}
+#left #screen {
+	padding: 0 1.5em 1.5em;
+}
+#left #notice {
+	color: #6d9100;
+	padding: 0.7em 1em;
+	margin: 1em 1.5em;
+	background-color: #e5ffba;
+	font-weight: bold;
+}
+#left #error {
+	color: #9f1d20;
+	padding: 0.7em 1em;
+	margin: 1em 1.5em;
+	background-color: #ffb7bc;
+	font-weight: bold;
+}
+#left #warning {
+	color: #ee9a00;
+	padding: 0.7em 1em;
+	margin: 1em 1.5em;
+	background-color: #fff1c0;
+	font-weight: bold;
+}
+/** Scaffold styles */
+.fieldWithErrors {
+	padding: 2px;
+	background-color: red;
+	display: table;
+}
+#errorExplanation {
+	width: 400px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+#errorExplanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #c00;
+	color: #fff;
+}
+#errorExplanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
+#errorExplanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+div.uploadStatus {
+	margin: 5px;
+}
+div.progressBar {
+	margin: 5px;
+}
+div.progressBar div.border {
+	background-color: #fff;
+	border: 1px solid grey;
+	width: 100%;
+}
+div.progressBar div.background {
+	background-color: #333;
+	height: 18px;
+	width: 0%;
+}
+/** Footer */
+#footer {
+	display: none;
+}

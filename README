@@ -1,0 +1,10 @@
+== Welcome to the Sample Social Network
+
+This application is intended as a testbed for features and also as a showcase
+for my Ruby and Rails experience and code. Feel free to fork, copy, paste, use
+and to whatever you like with this code (read the LICENCE file for a legal notice).
+
+This codebase aims to be a source of examples for a forthcoming series of articles
+about building websites (and social networks specifically) using Rails.
+
+Copyright (c) 2009 Maurício Linhares - mauricio DOT linhares AT gmail DOT com

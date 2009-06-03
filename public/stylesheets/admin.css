@@ -1,0 +1,15 @@
+#header {
+	background-color: #b11e16;
+}
+#tabs a {
+	color: #fff;
+	background-color: #ffa425;
+}
+#tabs li a:hover {
+	color: #fff;
+	background-color: #ffd76f;
+}
+#tabs li a.current {
+	color: #ffffff;
+	background-color: #808d67;
+}

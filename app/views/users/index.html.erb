@@ -1,0 +1,28 @@
+<h1> User's List </h1>
+
+<% unless @users.blank? %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Login</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for user in @users %>
+          <tr>
+            <td>
+              <%= link_to user, user %>
+            </td>
+            <td>
+              <%= user.email %>
+            </td>
+          </tr>
+      <% end  %>
+    </tbody>
+  </table>
+
+<% else %>
+  <p> No users here yet </p>
+<% end %>

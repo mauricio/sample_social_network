@@ -11,20 +11,6 @@ Scenario: Create a new user account and view the profile page
   Then I should not see "We couldn't set up that account."
   Then I should see "Welcome to the Sample Social Network!"
 
-Scenario: Login using an existing account
-  Given that a user "testuser" with password "testpassword" and email "testemail@mail.com" exists
-  When I go to the login page
-  Then the user "testuser" can log in with password "testpassword"
-
-Scenario: Deny login for an inexistent user
-  Given that no user "testuser" exists
-  When I go to the login page
-  When I fill in "login" with "testuser"
-  When I fill in "password" with "testpassword"
-  When I press "Log in"
-  Then I should be at the failed login page
-  Then I should see "Couldn't log you in as 'testuser'"
-
 Scenario: Deny account creation if the user already exists
   Given that a user "testuser" with password "testpassword" and email "testemail@mail.com" exists
   Given that I am at the sign up page

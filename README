@@ -4,7 +4,14 @@ This application is intended as a testbed for features and also as a showcase
 for my Ruby and Rails experience and code. Feel free to fork, copy, paste, use
 and to whatever you like with this code (read the LICENCE file for a legal notice).
 
-This codebase aims to be a source of examples for a forthcoming series of articles
-about building websites (and social networks specifically) using Rails.
+This codebase also aims to be a source of examples for a forthcoming
+serie of articles about building websites (and social networks specifically)
+using Rails, so, well known plugins will live beside home-made solutions.
+
+== Interesting bits now
+
+* i18n aware form builder at /config/initializers/sample_form_builder.rb
+* model specs using Shoulda matchers at /spec/models
+* controller and view tests done using Cucumber at /features
 
 Copyright (c) 2009 Maurício Linhares - mauricio DOT linhares AT gmail DOT com

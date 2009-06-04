@@ -1,0 +1,29 @@
+
+<% unless @entries.blank? %>
+
+  <%= will_paginate @entries  %>
+
+  <table>
+    <thead>
+      <tr>
+        <th> Title </th>
+        <th> User </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for entry in @entries %>
+          <td> <%= link_to entry %>  </td>
+          <td> <%= link_to entry.user %>  </td>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= will_paginate @entries  %>
+
+<% else %>
+
+  <p> No entries here now </p>
+
+<% end %>
+
+<p> <%= link_to 'Create a new entry!', new_entry_path %></p>

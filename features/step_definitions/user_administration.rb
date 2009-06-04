@@ -18,23 +18,13 @@ Then /^I should see it's "([^\"]*)" login and "([^\"]*)" email$/ do |login, emai
 end
 
 Given /^that a user "([^\"]*)" with password "([^\"]*)" and email "([^\"]*)" exists$/ do |login, password, email|
-  User.create!( :login => login, :password => password, :email => email, :password_confirmation => password )
+  User.create!( :login => login, :name => login, :password => password, :email => email, :password_confirmation => password )
 end
 
 When /^I visit the "([^\"]*)" user's profile page$/ do |login|
   visit user_path( User.find_by_login( login ) )
 end
 
-Then /^the user "([^\"]*)" can log in with password "([^\"]*)"$/ do |login, password|
-  fill_in "login", :with => login
-  fill_in "password", :with => password
-  click_button "Log In"
-  response.should contain("Logged in successfully")
-end
-
-Given /^that a user "([^\"]*)" with password "([^\"]*)" is logged in$/ do |login, password|
-  visit new_session_path
-  fill_in "login", :with => login
-  fill_in "password", :with => password
-  click_button "Log In"
+Given /^that there are no users at the database$/ do
+  User.count.should == 0
 end

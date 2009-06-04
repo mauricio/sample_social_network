@@ -1,0 +1,7 @@
+<% form_for @entry, :builder => SampleFormBuilder do |f| %>
+  <%= f.error_messages  %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.text_field :tag_list %>
+  <%= f.submit %>
+<% end %>

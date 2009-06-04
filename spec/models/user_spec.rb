@@ -24,6 +24,12 @@ describe User do
     it { should validate_uniqueness_of(:email) }
     it { should validate_uniqueness_of(:login) }
 
+    it { should have_many(:entries) }
+
+    it { should_not allow_value('no-email#mail').for(:email).with_message(/should look like an email address/) }
+    it { should_not allow_mass_assignment_of(:crypted_password) }
+    it { should_not allow_mass_assignment_of(:salt) }
+
   end
 
 end

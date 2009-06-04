@@ -1,6 +1,15 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  def link_to( *args )
+    options = args.extract_options!
+    if args.size == 1 && args.first.is_a?( ActiveRecord::Base )
+      super( *([ args.first, args.first ] + [ options ]) )
+    else
+      super( *( args + [ options ] ) )
+    end
+  end
+
   def flash_message
     messages = []
     [:notice, :info, :warning, :error].each do|type|
@@ -29,19 +38,13 @@ module ApplicationHelper
   # +all_options+ is an array of hashes, where the first hash of the array is the tab's link and all others will make the tab show up as current.
   #
   # If now options are specified, the tab will point to '#', and will never have the 'active' state.
-  def tab_to(name, all_options = nil)
-    url = all_options.is_a?(Array) ? all_options[0].merge({:only_path => false}) : "#"
-
-    current_url = url_for(:action => @current_action, :only_path => false)
+  def tab_to(name, url = nil)
+    url = url_for( url )
+    current_url = url_for( params )
     html_options = {}
-
-    if all_options.is_a?(Array)
-      all_options.each do |o|
-        if url_for(o.merge({:only_path => false})) == current_url
-          html_options = {:class => "current"}
-          break
-        end
-      end
+    if url == current_url
+      html_options[:class] = 'current'
+      url = '#'
     end
 
     link_to(name, url, html_options)

@@ -25,7 +25,7 @@ Scenario: Deny account creation if the user already exists
 
 Scenario: Update user details for existing user
   Given that a user "testuser" with password "testpassword" and email "testemail@mail.com" exists
-  Given that a user "testuser" with password "testpassword" is logged in
+  Given that I am logged in as "testuser" with "testpassword"
   Given that I am at the testuser's edit profile page
   When I fill in "user_name" with "newtestuser"
   When I fill in "user_email" with "newtestemail@email.com"

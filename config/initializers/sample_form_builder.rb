@@ -18,7 +18,10 @@ class SampleFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def submit(value = nil, options = {})
-    @template.content_tag( :p, super )
+    if self.object && value.nil?
+      value = self.object.new_record? ? 'Create' : 'Update'
+    end
+    @template.content_tag( :p, super( value, options ) )
   end
 
   def field_label( field, options )

@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
 
   layout 'login'
 
+  before_filter :send_to_profile_page_if_already_logged_in, :only => :new
+
   # render new.rhtml
   def new
   end
@@ -40,4 +42,12 @@ protected
     flash.now[:error] = "Couldn't log you in as '#{params[:login]}'"
     logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
+
+  def send_to_profile_page_if_already_logged_in
+    if logged_in?
+      redirect_to( user_path( current_user ) )
+    end
+    true
+  end
+
 end

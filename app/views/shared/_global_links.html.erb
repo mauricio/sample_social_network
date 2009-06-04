@@ -1,7 +1,9 @@
 <% if logged_in? %>
- 	<strong><%= current_user.login %></strong> | 
-	<%= link_to "Dashboard", root_url %> | 
-	<%= link_to "My Account", current_user %> | 
+ 	<strong><%= current_user.login %></strong> |
+    <!--
+	<%= link_to "Dashboard", root_url %> |
+    -->
+	<%= link_to "My Account", edit_user_path( current_user ) %> |
 	<%= link_to "Log out", logout_url, :method => :delete %>
 <% else %>
 	<%= link_to "Sign up", signup_url %> | 

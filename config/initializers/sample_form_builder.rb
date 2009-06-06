@@ -19,7 +19,7 @@ class SampleFormBuilder < ActionView::Helpers::FormBuilder
 
   def submit(value = nil, options = {})
     if self.object && value.nil?
-      value = self.object.new_record? ? 'Create' : 'Update'
+      value = self.object.new_record? ? I18n.t( 'txt.shared.create' ) : I18n.t( 'txt.shared.update' )
     end
     @template.content_tag( :p, super( value, options ) )
   end

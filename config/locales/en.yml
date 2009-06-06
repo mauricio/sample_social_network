@@ -1,5 +1,19 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+    attributes:
+      user:
+        name: Name
+        date_of_birth: Date of birth
+        login: Login
+        password: Password
+        password_confirmation: Password Confirmation
+        profession: Profession
+  txt:
+    shared:
+      create: "Create"
+      update: "Update"
+      required: "Required"

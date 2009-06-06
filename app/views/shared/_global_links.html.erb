@@ -9,3 +9,6 @@
 	<%= link_to "Sign up", signup_url %> | 
 	<%= link_to "Log in", login_url %>
 <% end %>
+
+    | <%= link_to 'English', url_for( params.merge( {:locale => 'en'} ) ) %>
+    | <%= link_to 'Portuguese', url_for( params.merge( {:locale => 'pt-BR'} ) ) %>

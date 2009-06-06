@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   include AuthenticatedSystem
 
+  before_filter :set_current_locale
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -16,6 +18,11 @@ class ApplicationController < ActionController::Base
   def load_page
     @page = params[:page].blank? ? '1' : params[:page]
     @per_page = params[:per_page].blank? ? '15' : params[:per_page]
+  end
+
+  def set_current_locale
+    session[:locale] = params[:locale] || session[:locale]
+    I18n.locale=( session[:locale] )
   end
 
   def paginate_model( model, options = {})

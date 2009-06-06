@@ -5,7 +5,8 @@
   <%= f.text_field :name %>
   <%= f.text_field :login %>
   <%= f.text_field :email %>
+  <%= f.text_field :profession %>
   <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation, :label => 'Confirm Password' %>
+  <%= f.password_field :password_confirmation %>
   <%= f.submit @user.new_record? ? 'Sign up' : 'Update' %>
 <% end -%>

@@ -11,6 +11,7 @@ class SampleFormBuilder < ActionView::Helpers::FormBuilder
     class_eval %Q!
     def #{name}(field, *args)
       options = args.extract_options\!
+      args << options
       return super if options.delete(:disable_builder)
       @template.content_tag(:p, field_label(field, options) << '<br/>' << super)
     end
